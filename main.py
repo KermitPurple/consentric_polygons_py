@@ -87,8 +87,7 @@ class PolygonSim(pgt.GameScreen):
             center = self.center
         if sides < 3:
             raise ValueError(f'By definition, a polygon must have at least 3 sides, {sides} is not enough sides')
-        theta = math.pi - math.pi * 2 / sides
-        hypot = side_length / 2 / math.cos(theta / 2)
+        hypot = side_length / 2 / math.cos((math.pi - math.pi * 2 / sides) / 2)
         points = []
         for i in range(sides):
             theta = math.pi * 2 * i / sides + offset_angle
